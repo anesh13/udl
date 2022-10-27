@@ -1,0 +1,52 @@
+<%- include("partials/header.ejs") -%>
+<h1>Home</h1>
+
+<div class="accordion accordion-flush" id="accordionFlushExample">
+<% Object.keys(data).forEach(function(key) { %>
+ <%  console.log("dkey homepage  " +  key);%>
+ <% var temp = data[key];%>
+  <% var lessons = temp[0];%>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-heading<%=key%>">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<%=key%>" aria-expanded="false" aria-controls="flush-collapse<%=key%>">
+        Grade <%=key%>
+      </button>
+    </h2>
+
+    <div id="flush-collapse<%=key%>" class="accordion-collapse collapse" aria-labelledby="flush-heading<%=key%>" data-bs-parent="#accordionFlushExample">
+      <% var count =0; %>
+
+      <div class="accordion-body">
+        <div class="accordion" id="sub-accordionExample">
+          <% Object.keys(lessons).forEach(function(index) { %>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sub-heading<%=count + key%>">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sub-collapse<%=count + key%>" aria-expanded="false" aria-controls="collapse<%=count + key%>">
+                        <strong><%=index%></strong>
+                    </button>
+                </h2>
+
+                <div id="sub-collapse<%=count + key%>" class="accordion-collapse collapse" aria-labelledby="sub-heading<%=count + key%>" data-bs-parent="#sub-accordionExample">
+                    <div class="accordion-body">
+                      <ul class="list-group list-group-flush">
+                        <%lessons[index].forEach(lesson => { %>
+                        <li class="list-group-item"><a href="/video/<%= lesson.grade_id %>/<%= lesson.lesson_id %>"><%=lesson.lesson_title%></a></li>
+                        <%});%>
+                      </ul>
+                    </div>
+                </div>
+
+            </div>
+            <%count++;%>
+               <% }); %>
+        </div>
+</div></div>
+
+  </div>
+  <% }); %>
+</div>
+
+
+
+
+ <%- include("partials/footer.ejs") -%>

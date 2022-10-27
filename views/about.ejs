@@ -1,0 +1,45 @@
+<%- include("partials/header.ejs") -%>
+<h1>About</h1>
+<br></br>
+<div class = "about_content">
+<p><%= aboutContent1 %></p> <br></br>
+
+<p><%= aboutContent2 %></p> <br></br>
+
+<p><%= aboutContent3 %></p>
+
+</div>
+
+<div class="container-fluid">
+    <div class="row gy-4">
+        <div class="col-sm">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold align-items-center d-flex justify-content-center">Mission</h5>
+                    <p class="card-text"><%= mission %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card h-100">
+              <img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" id="icon" src="/assets/2.png">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold align-items-center d-flex justify-content-center">Problem</h5>
+                    <p class="card-text"><%= problem %></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card h-100">
+              <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                    <h5 class="card-title fw-bold align-items-center d-flex justify-content-center">Our Solution</h5>
+                    <p class="card-text"><%= solution %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") -%>

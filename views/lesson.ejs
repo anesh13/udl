@@ -1,0 +1,9 @@
+<%- include("partials/header.ejs") -%>
+
+<h1><%= lesson.lesson_title %></h1>
+<h4><%= lesson.subject %></h4> <br></br>
+<p><%= lesson.description %></p> <br></br>
+
+<div>
+  <iframe width="560" height="315" src="<%=lesson.link%>" title="<%= lesson.lesson_title %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
